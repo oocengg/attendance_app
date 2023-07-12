@@ -1,5 +1,7 @@
+import 'package:attendance_app/features/attendance/view/attendance_screen.dart';
 import 'package:attendance_app/features/home/widgets/menu_item.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MenuWidget extends StatelessWidget {
@@ -17,7 +19,14 @@ class MenuWidget extends StatelessWidget {
         MenuItem(
           title: 'Attendance',
           icon: FluentIcons.calendar_ltr_20_regular,
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (context) => const AttendanceScreen(),
+              ),
+            );
+          },
         ),
         MenuItem(
           title: 'Log Book Report',
