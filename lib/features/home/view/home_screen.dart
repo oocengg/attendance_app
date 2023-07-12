@@ -1,3 +1,4 @@
+import 'package:attendance_app/features/home/widgets/attendance_widget.dart';
 import 'package:attendance_app/features/home/widgets/heading_widget.dart';
 import 'package:attendance_app/features/home/widgets/menu_widget.dart';
 import 'package:attendance_app/features/home/widgets/task_widget.dart';
@@ -14,6 +15,10 @@ class HomeScreen extends StatelessWidget {
         child: ListView(
           children: [
             const HeadingWidget(),
+            const SizedBox(
+              height: 24,
+            ),
+            const AttendanceWidget(),
             const SizedBox(
               height: 24,
             ),
