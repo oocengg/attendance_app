@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Attendance Report App',
       home: const SplashScreen(),
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: const Color(0xFFF0F2F4),
         useMaterial3: true,
         textTheme: GoogleFonts.poppinsTextTheme(
           Theme.of(context).textTheme,

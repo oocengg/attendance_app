@@ -39,6 +39,9 @@ dependencies:
   carousel_slider: ^4.2.1
   animated_text_kit: ^4.2.2
   url_launcher: ^6.1.12
+  fluent_ui: ^4.7.0
+  fluentui_system_icons: ^1.1.205
+  stacked_card_carousel: ^0.0.4
 
 dev_dependencies:
   flutter_test:
