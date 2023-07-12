@@ -41,22 +41,22 @@ class AttendanceWidget extends StatelessWidget {
                 ],
               ),
             ),
-            // const Icon(
-            //   FluentIcons.checkmark_circle_20_filled,
-            //   color: Colors.indigo,
-            //   size: 50,
-            // ),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.indigo,
-              ),
-              onPressed: () {},
-              child: Text(
-                'Absen',
-                style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.normal, color: Colors.white),
-              ),
+            const Icon(
+              FluentIcons.checkmark_circle_20_filled,
+              color: Colors.indigo,
+              size: 50,
             ),
+            // TextButton(
+            //   style: TextButton.styleFrom(
+            //     backgroundColor: Colors.indigo,
+            //   ),
+            //   onPressed: () {},
+            //   child: Text(
+            //     'Absen',
+            //     style: Theme.of(context).textTheme.titleMedium!.copyWith(
+            //         fontWeight: FontWeight.normal, color: Colors.white),
+            //   ),
+            // ),
           ],
         ),
       ),
