@@ -34,6 +34,7 @@ class MenuItem extends StatelessWidget {
             Icon(
               icon,
               size: 60,
+              color: Colors.indigo,
             ),
             const SizedBox(
               height: 10,

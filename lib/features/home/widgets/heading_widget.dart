@@ -22,6 +22,7 @@ class HeadingWidget extends StatelessWidget {
                 'Muh. Fauzi Ramadhan Nugraha',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       fontWeight: FontWeight.bold,
+                      color: Colors.indigo,
                     ),
               ),
             ],

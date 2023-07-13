@@ -35,26 +35,23 @@ class AttendanceItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            attendance == 'Hadir'
+            attendance == 'Masuk'
                 ? const Icon(
-                    FluentIcons.checkmark_circle_20_filled,
+                    FluentIcons.chevron_circle_right_20_filled,
                     color: Colors.indigo,
                     size: 50,
                   )
-                : attendance == 'Izin'
+                : attendance == 'Pulang'
                     ? const Icon(
-                        FluentIcons.error_circle_20_filled,
+                        FluentIcons.chevron_circle_left_20_filled,
                         color: Colors.indigo,
                         size: 50,
                       )
-                    : attendance == 'Alpa'
-                        ? const Icon(
-                            FluentIcons.dismiss_circle_20_filled,
-                            color: Colors.indigo,
-                            size: 50,
-                          )
-                        : const Icon(FluentIcons.checkmark_circle_20_filled,
-                            color: Colors.indigo, size: 50),
+                    : const Icon(
+                        FluentIcons.error_circle_20_filled,
+                        color: Colors.indigo,
+                        size: 50,
+                      ),
             const SizedBox(
               width: 12,
             ),

@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:attendance_app/features/dashboard/view/dashboard_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:attendance_app/features/home/view/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     const duration = Duration(seconds: 5);
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomeScreen()));
+          MaterialPageRoute(builder: (context) => const DashboardScreen()));
     });
   }
 
