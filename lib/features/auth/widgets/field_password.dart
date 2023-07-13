@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
 
 class FieldPassword extends StatefulWidget {
-  const FieldPassword({super.key});
+  final String? Function(String?)? validator;
+  final TextEditingController passController;
+  final bool? obscureText;
+  final bool? isError;
+  const FieldPassword({
+    super.key,
+    required this.validator,
+    required this.passController,
+    this.obscureText = false,
+    this.isError = false
+  });
 
   @override
   State<FieldPassword> createState() => _FieldPasswordState();
 }
 
 class _FieldPasswordState extends State<FieldPassword> {
-  TextEditingController passController = TextEditingController();
+  late bool _isError = false;
   bool _passwordVisible = false;
   @override
   Widget build(BuildContext context) {
@@ -24,43 +34,78 @@ class _FieldPasswordState extends State<FieldPassword> {
         const SizedBox(
           height: 10,
         ),
-        Container(
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(
-                  color: Colors.grey
-              )
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: TextField(
-              controller: passController,
-              decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: "min. 8 characters",
-                hintStyle: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.grey,
-                ),
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    _passwordVisible
-                        ? Icons.visibility_off
-                        : Icons.visibility,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _passwordVisible = !_passwordVisible;
-                    });
-                  },
-                ),
+        TextFormField(
+          controller: widget.passController,
+          decoration: InputDecoration(
+              border: Theme.of(context).inputDecorationTheme.border,
+            errorStyle: const TextStyle(
+              color: Colors.red,
+            ),
+            errorBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: _isError || widget.isError!
+                    ? Colors.red
+                    : Colors.grey,
               ),
-              obscureText: !_passwordVisible,
-              style: const TextStyle(
-                  fontSize: 22, color: Colors.black, height: 1.5),
-              textInputAction: TextInputAction.next,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: _isError || widget.isError!
+                    ? Colors.red
+                    : Colors.grey,
+              ),
+              borderRadius: BorderRadius.circular(30),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: _isError || widget.isError!
+                    ? Colors.red
+                    : Colors.grey,
+              ),
+              borderRadius: BorderRadius.circular(30),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: _isError || widget.isError! ? Colors.red : Colors.grey,
+              ),
+              borderRadius: BorderRadius.circular(30),
+            ),
+            hintText: "min. 8 characters",
+            hintStyle: const TextStyle(
+              fontSize: 15,
+              color: Colors.grey,
+            ),
+            labelStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
+              color: _isError || widget.isError!
+                  ? Colors.red
+                  : const Color(0xFF030712),
+            ),
+            suffixIcon: IconButton(
+              icon: Icon(
+                _passwordVisible
+                    ? Icons.visibility_off
+                    : Icons.visibility,
+              ),
+              onPressed: () {
+                setState(() {
+                  _passwordVisible = !_passwordVisible;
+                });
+              },
             ),
           ),
+          obscureText: !_passwordVisible,
+          style: const TextStyle(
+              fontSize: 15, color: Colors.black),
+          textInputAction: TextInputAction.next,
+          validator: widget.validator != null
+              ? (value) {
+            setState(() {
+              _isError = widget.validator!(value) != null;
+            });
+            return widget.validator!(value);
+          }
+              : null,
         ),
       ],
     );

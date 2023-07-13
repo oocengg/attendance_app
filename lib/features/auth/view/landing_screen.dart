@@ -61,7 +61,7 @@ class LandingScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.55,
             child: TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(
+                Navigator.of(context).push(
                   CupertinoPageRoute(builder: (BuildContext context) => const LoginScreen())
                 );
               },
