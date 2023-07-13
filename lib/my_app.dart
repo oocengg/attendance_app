@@ -1,3 +1,6 @@
+import 'package:attendance_app/features/auth/provider/login_provider.dart';
+import 'package:attendance_app/features/auth/provider/shared_preferences_provider.dart';
+import 'package:attendance_app/features/auth/provider/validator_auth_provider.dart';
 import 'package:attendance_app/features/dashboard/provider/dashboard_provider.dart';
 import 'package:attendance_app/features/home/provider/attendance_provider.dart';
 import 'package:attendance_app/features/report/provider/report_provider.dart';
@@ -22,6 +25,15 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AttendanceProvider(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => ValidatorProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LoginProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SharedPreferencesProvider(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
