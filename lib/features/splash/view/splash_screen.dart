@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:attendance_app/features/auth/view/landing_screen.dart';
+import 'package:attendance_app/features/auth/view/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:attendance_app/features/home/view/home_screen.dart';
 
@@ -21,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
     const duration = Duration(seconds: 5);
     return Timer(duration, () {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomeScreen()));
+          MaterialPageRoute(builder: (context) => const LandingScreen()));
     });
   }
 
