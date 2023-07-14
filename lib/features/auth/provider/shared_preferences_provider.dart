@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesProvider extends ChangeNotifier {
-  bool _isFirstTime = true;
+  // bool _isFirstTime = true;
   bool _isLoggedIn = false;
-  bool _isLoading = true;
+  // bool _isLoading = true;
 
   // SharedPreferencesProvider() {
   //   checkOnboardingStatus();

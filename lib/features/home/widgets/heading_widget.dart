@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
 class HeadingWidget extends StatelessWidget {
@@ -28,10 +29,21 @@ class HeadingWidget extends StatelessWidget {
             ],
           ),
         ),
-        const CircleAvatar(
-          radius: 30,
-          backgroundImage: AssetImage('assets/images/profile.png'),
-          backgroundColor: Colors.grey,
+        const SizedBox(
+          width: 20,
+        ),
+        Container(
+          width: 45,
+          height: 45,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.indigo,
+          ),
+          child: const Icon(
+            FluentIcons.person_20_filled,
+            color: Colors.white,
+            size: 30,
+          ),
         ),
       ],
     );

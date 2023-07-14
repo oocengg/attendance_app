@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TaskItem extends StatelessWidget {
-  final String title;
   final String desc;
 
   const TaskItem({
     super.key,
-    required this.title,
     required this.desc,
   });
 
@@ -36,12 +34,12 @@ class TaskItem extends StatelessWidget {
             //   height: 250,
             //   child: image,
             // ),
-            Text(
-              title,
-              style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
+            // Text(
+            //   title,
+            //   style: Theme.of(context).textTheme.titleMedium!.copyWith(
+            //         fontWeight: FontWeight.bold,
+            //       ),
+            // ),
             Text(desc),
           ],
         ),

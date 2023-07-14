@@ -1,7 +1,6 @@
 import 'package:attendance_app/features/auth/widgets/btn_login.dart';
 import 'package:attendance_app/features/auth/widgets/field_password.dart';
 import 'package:attendance_app/features/auth/widgets/field_username.dart';
-import 'package:attendance_app/features/dashboard/provider/dashboard_provider.dart';
 import 'package:attendance_app/features/dashboard/view/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

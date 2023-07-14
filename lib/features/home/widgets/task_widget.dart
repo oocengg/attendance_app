@@ -9,21 +9,21 @@ class TaskWidget extends StatelessWidget {
     return const Column(
       children: [
         TaskItem(
-          title: 'title',
+          // title: 'title',
           desc: 'Lorem aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         ),
         SizedBox(
           height: 10,
         ),
         TaskItem(
-          title: 'title',
+          // title: 'title',
           desc: 'Lorem aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         ),
         SizedBox(
           height: 10,
         ),
         TaskItem(
-          title: 'title',
+          // title: 'title',
           desc: 'Lorem aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
         ),
       ],

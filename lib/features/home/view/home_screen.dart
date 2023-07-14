@@ -12,10 +12,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        shape: const CircleBorder(),
+      floatingActionButton: FloatingActionButton.extended(
+        // shape: const CircleBorder(),
         backgroundColor: Colors.indigo,
-        child: const Icon(
+        label: Text(
+          'Add Log Book',
+          style: Theme.of(context)
+              .textTheme
+              .titleSmall!
+              .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        icon: const Icon(
           FluentIcons.add_20_regular,
           color: Colors.white,
         ),
@@ -110,7 +117,7 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            AttendanceWidget(),
+            const AttendanceWidget(),
             const SizedBox(
               height: 24,
             ),

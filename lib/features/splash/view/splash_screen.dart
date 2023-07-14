@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:attendance_app/features/auth/view/landing_screen.dart';
-import 'package:attendance_app/features/dashboard/view/dashboard_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -31,7 +31,10 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Image.asset('assets/images/splass.png'),
+        child: Lottie.asset(
+          'assets/images/splash_icon.json',
+          width: MediaQuery.of(context).size.width * 0.5,
+        ),
       ),
     );
   }
